@@ -2,18 +2,22 @@ package com.lduboscq.appkickstarter.main
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import com.lduboscq.appkickstarter.screen.AboutScreen
-import com.lduboscq.appkickstarter.screen.AllScreens
 import com.lduboscq.appkickstarter.ui.Image
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
@@ -51,14 +55,15 @@ fun Banner(
                 modifier = Modifier.padding(16.dp), textAlign = TextAlign.Justify
             )
             Image(
-                url="https://en.wikipedia.org/wiki/Cat#/media/File:Felis_catus-cat_on_snow.jpg",
-                contentDescription="It's a cat!",
+                url = "https://en.wikipedia.org/wiki/Cat#/media/File:Felis_catus-cat_on_snow.jpg",
+                contentDescription = "It's a cat!",
             )
         }
-        Row {
-        }
-        Row {
-
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                "https://en.wikipedia.org/wiki/Cat#/media/File:Felis_catus-cat_on_snow.jpg",
+                Modifier.size(50.dp).clip(CircleShape)
+            )
         }
     }
 }
